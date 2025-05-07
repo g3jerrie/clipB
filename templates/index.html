@@ -1,0 +1,19 @@
+<!-- # 
+#   clipB
+#
+#   @g3jerrie
+# -->
+
+<h2>clipB</h2>
+<form method="POST">
+    <textarea name="content">{{ content }}</textarea>
+    <button type="submit">Save</button>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on("update", function(newContent) {
+        document.querySelector("textarea").value = newContent;
+    });
+</script>
